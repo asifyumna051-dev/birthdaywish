@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Cuddle Buddy!🎂</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="intro-page" id="introPage">
+    <div class="intro-stars" id="introStars"></div>
+    <div class="intro-sparkles" id="introSparkles"></div>
+    <div class="intro-inner">
+      <div class="intro-sticker-wrap">
+        <img src="https://media.giphy.com/media/kfRKF0iqA8jyDqq1nH/giphy.gif" alt="Milk and Mocha Bear" class="intro-sticker" onerror="this.onerror=null;this.src='https://media.giphy.com/media/JTIy6MKXfdfYDDBHV0/giphy.gif'" />
+      </div>
+      <div class="intro-name">Kharus One ❤️</div>
+      <div class="intro-subtitle">Someone has prepared a little surprise just for you...</div>
+      <button class="intro-btn" id="introBtn">🎁 Open It</button>
+    </div>
+  </div>
+
+  <canvas id="universe"></canvas>
+  <div class="aurora-bg"></div>
+  <div id="cursorGlow" class="cursor-glow"></div>
+  <div id="starsContainer"></div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-title-row">
+        <h1 class="hero-title" data-scramble>
+          <span class="typing-text" id="typingText">🎉</span>
+        </h1>
+        <div class="mickey-container">
+          <img src="images/mickey.png" alt="Mickey" class="mickey-img" />
+        </div>
+      </div>
+      <div class="hero-bottom-row">
+        <div class="calendar-wrapper">
+          <div class="calendar">
+            <div class="calendar-header">
+              <span class="calendar-month">July</span>
+              <span class="calendar-year">2026</span>
+            </div>
+            <div class="calendar-days">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="calendar-dates" id="calendarDates"></div>
+          </div>
+        </div>
+        <button class="hero-btn magnetic" id="heroBtn" data-strength="40">🎁 Open Your Surprise</button>
+      </div>
+    </div>
+  </section>
+
+  <audio id="birthdaySong" loop style="display:none">
+    <source src="music/a-cheerful-ukulele-waltz.mp3" type="audio/mpeg" />
+  </audio>
+  <div class="balloons-container" id="balloonsContainer"></div>
+
+  <!-- GIFT ROOM -->
+  <div class="gift-room" id="giftRoom">
+    <div class="gift-room-header">
+      <h2 class="gift-room-title">✨ Choose a Gift ✨</h2>
+      <p class="gift-room-sub">Tap on the unlocked gift to open it!</p>
+    </div>
+    <div class="gifts-row" id="giftsRow">
+      <div class="gift-box unlocked" data-gift="1" id="gift1">
+        <div class="gift-lock" id="lock1"><span>🔒</span></div>
+        <div class="gift-box-visual">
+          <div class="gift-wrap gift-wrap-1"></div>
+          <div class="gift-ribbon"></div>
+          <div class="gift-bow"></div>
+        </div>
+        <div class="gift-sparkles"></div>
+      </div>
+      <div class="gift-box locked" data-gift="2" id="gift2">
+        <div class="gift-lock" id="lock2"><span>🔒</span></div>
+        <div class="gift-box-visual">
+          <div class="gift-wrap gift-wrap-2"></div>
+          <div class="gift-ribbon"></div>
+          <div class="gift-bow"></div>
+        </div>
+        <div class="gift-sparkles"></div>
+      </div>
+      <div class="gift-box locked" data-gift="3" id="gift3">
+        <div class="gift-lock" id="lock3"><span>🔒</span></div>
+        <div class="gift-box-visual">
+          <div class="gift-wrap gift-wrap-3"></div>
+          <div class="gift-ribbon"></div>
+          <div class="gift-bow"></div>
+        </div>
+        <div class="gift-sparkles"></div>
+      </div>
+      <div class="gift-box locked" data-gift="4" id="gift4">
+        <div class="gift-lock" id="lock4"><span>🔒</span></div>
+        <div class="gift-box-visual">
+          <div class="gift-wrap gift-wrap-4"></div>
+          <div class="gift-ribbon"></div>
+          <div class="gift-bow"></div>
+        </div>
+        <div class="gift-sparkles"></div>
+      </div>
+    </div>
+    <div class="gift-back-btn-wrap">
+      <button class="gift-back-btn" id="giftBackBtn">← Back</button>
+    </div>
+  </div>
+
+  <!-- GIFT CONTENT OVERLAY -->
+  <div class="gift-content-overlay" id="giftContent">
+    <div class="gift-content-close" id="giftContentClose">&times;</div>
+    <div class="gift-content-inner" id="giftContentInner">
+      <!-- Gift 1: Cute Letter -->
+      <div class="gift-letter" id="giftLetter">
+        <div class="envelope" id="envelope">
+          <div class="envelope-flap"></div>
+          <div class="envelope-body"></div>
+          <div class="letter-paper" id="letterPaper">
+            <div class="letter-text">
+              <p class="letter-greeting">Dear Kharus One,</p>
+              <p class="letter-body">
+                You are someone who makes every moment special just by being there.
+                Your smile lights up the darkest days and your kindness touches every heart around you.
+              </p>
+              <p class="letter-body">
+                On this special day, I just want you to know how much you mean to me and everyone around you.
+                You deserve all the happiness in the world. 🌟
+              </p>
+              <p class="letter-sign">With love and warm wishes,<br> Someone who cares ❤️</p>
+            </div>
+          </div>
+        </div>
+        <div class="letter-hearts" id="letterHearts"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
