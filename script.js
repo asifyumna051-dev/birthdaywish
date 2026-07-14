@@ -56,8 +56,10 @@ let time = 0;
 
 // Performance Optimization: Canvas resize with initial dimensions
 function resizeCanvas() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
+  const vw = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+  const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  W = canvas.width = vw;
+  H = canvas.height = vh;
   if (isTouchDevice() && CONFIG.particleCount > 20) {
     CONFIG.particleCount = 20;
     CONFIG.starCount = 30;
@@ -66,7 +68,11 @@ function resizeCanvas() {
   }
 }
 resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', resizeCanvas);
+} else {
+  window.addEventListener('resize', resizeCanvas);
+}
 
 class Particle {
   constructor() {
