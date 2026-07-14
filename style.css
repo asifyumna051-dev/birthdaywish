@@ -893,13 +893,21 @@ img { max-width: 100%; height: auto; }
   body { cursor: auto; -webkit-tap-highlight-color: transparent; }
   .cursor-glow { display: none; }
 
-  .hero { height: 100vh; min-height: auto; padding: 20px 16px; overflow: hidden; transform-style: flat; }
+  .hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    padding: 30px 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform-style: flat;
+  }
   .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 18px;
+    gap: 20px;
     max-width: 90%;
     transform-style: flat;
   }
@@ -913,8 +921,8 @@ img { max-width: 100%; height: auto; }
   }
   .hero-title { font-size: 1.8rem; max-width: 100%; text-align: center; transform-style: flat; }
   .mickey-container {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     max-width: none;
     aspect-ratio: auto;
     position: static;
@@ -932,7 +940,7 @@ img { max-width: 100%; height: auto; }
     gap: 16px;
     width: 100%;
   }
-  .calendar { width: 260px; padding: 14px; }
+  .calendar { width: 100%; max-width: 260px; padding: 14px; }
   .calendar-header { margin-bottom: 6px; }
   .calendar-month { font-size: 1.15rem; }
   .calendar-year { font-size: 0.9rem; }
@@ -951,15 +959,15 @@ img { max-width: 100%; height: auto; }
 
 /* ===== RESPONSIVE — MOBILE (480px) ===== */
 @media (max-width: 480px) {
-  .hero { height: 100vh; padding: 16px 12px; }
+  .hero { padding: 24px 12px; }
   .hero-content { gap: 16px; max-width: 92%; }
 
   .hero-title { font-size: 1.5rem; }
-  .mickey-container { width: 200px; height: 200px; border-radius: 16px; }
+  .mickey-container { width: 180px; height: 180px; border-radius: 16px; }
   .mickey-img { border-radius: 16px; }
   .hero-btn { padding: 13px 30px; font-size: 0.95rem; }
 
-  .calendar { width: 260px; padding: 14px; }
+  .calendar { width: 100%; max-width: 240px; padding: 14px; }
   .calendar-month { font-size: 1.05rem; }
   .calendar-year { font-size: 0.82rem; }
   .calendar-days span { font-size: 0.62rem; }
@@ -979,10 +987,10 @@ img { max-width: 100%; height: auto; }
   .hero-title { font-size: 1.35rem; }
   .hero-btn { padding: 12px 28px; font-size: 0.9rem; }
 
-  .mickey-container { width: 180px; height: 180px; border-radius: 14px; }
+  .mickey-container { width: 160px; height: 160px; border-radius: 14px; }
   .mickey-img { border-radius: 14px; }
 
-  .calendar { width: 240px; padding: 12px; }
+  .calendar { width: 100%; max-width: 230px; padding: 12px; }
 
   .intro-sticker-wrap { width: 170px; height: 160px; }
   .intro-name { font-size: 1.7rem; }
@@ -994,9 +1002,9 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 414px) {
   .hero-title { font-size: 1.33rem; }
   .hero-btn { padding: 12px 28px; font-size: 0.9rem; }
-  .mickey-container { width: 175px; height: 175px; border-radius: 14px; }
+  .mickey-container { width: 155px; height: 155px; border-radius: 14px; }
   .mickey-img { border-radius: 14px; }
-  .calendar { width: 235px; padding: 12px; }
+  .calendar { width: 100%; max-width: 225px; padding: 12px; }
   .intro-sticker-wrap { width: 170px; height: 160px; }
   .intro-name { font-size: 1.68rem; }
   .intro-subtitle { font-size: 0.82rem; max-width: 250px; }
@@ -1007,9 +1015,9 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 390px) {
   .hero-title { font-size: 1.28rem; }
   .hero-btn { padding: 12px 26px; font-size: 0.88rem; }
-  .mickey-container { width: 170px; height: 170px; border-radius: 14px; }
+  .mickey-container { width: 150px; height: 150px; border-radius: 14px; }
   .mickey-img { border-radius: 14px; }
-  .calendar { width: 230px; padding: 12px; }
+  .calendar { width: 100%; max-width: 220px; padding: 12px; }
   .intro-sticker-wrap { width: 165px; height: 155px; }
   .intro-name { font-size: 1.62rem; }
   .intro-subtitle { font-size: 0.8rem; max-width: 240px; }
@@ -1018,15 +1026,15 @@ img { max-width: 100%; height: auto; }
 
 /* ===== RESPONSIVE — IPHONE SE / TINY (375px) ===== */
 @media (max-width: 375px) {
-  .hero { padding: 14px 10px; }
+  .hero { padding: 20px 10px; }
   .hero-content { gap: 14px; max-width: 95%; }
   .hero-title { font-size: 1.25rem; }
   .hero-btn { padding: 12px 26px; font-size: 0.88rem; }
 
-  .mickey-container { width: 160px; height: 160px; border-radius: 12px; }
+  .mickey-container { width: 140px; height: 140px; border-radius: 12px; }
   .mickey-img { border-radius: 12px; }
 
-  .calendar { width: 220px; padding: 11px; }
+  .calendar { width: 100%; max-width: 210px; padding: 11px; }
   .calendar-month { font-size: 0.95rem; }
   .calendar-year { font-size: 0.78rem; }
   .calendar-days span { font-size: 0.58rem; }
@@ -1042,15 +1050,15 @@ img { max-width: 100%; height: auto; }
 
 /* ===== RESPONSIVE — SMALLEST (320px) ===== */
 @media (max-width: 320px) {
-  .hero { padding: 12px 8px; }
+  .hero { padding: 16px 8px; }
   .hero-content { gap: 12px; max-width: 96%; }
   .hero-title { font-size: 1.15rem; }
   .hero-btn { padding: 11px 24px; font-size: 0.85rem; }
 
-  .mickey-container { width: 140px; height: 140px; border-radius: 10px; }
+  .mickey-container { width: 130px; height: 130px; border-radius: 10px; }
   .mickey-img { border-radius: 10px; }
 
-  .calendar { width: 200px; padding: 10px; }
+  .calendar { width: 100%; max-width: 195px; padding: 10px; }
   .calendar-header { margin-bottom: 8px; }
   .calendar-month { font-size: 0.9rem; }
   .calendar-year { font-size: 0.72rem; }
